@@ -387,7 +387,28 @@ function initCursor() {
 // ===== 13. ACTIVE NAV LINK =====
 function initNavActiveLink() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
+  const navLinks = document.querySelectorAll('.nav-link-item');
+  const indicator = document.getElementById('nav-indicator');
+  const navUl = document.getElementById('nav-links');
+
+  function moveIndicator(activeLink) {
+    if (!activeLink || !indicator || !navUl) return;
+    const ulRect = navUl.getBoundingClientRect();
+    const linkRect = activeLink.getBoundingClientRect();
+    indicator.style.left = (linkRect.left - ulRect.left) + 'px';
+    indicator.style.width = linkRect.width + 'px';
+  }
+
+  // Set initial position
+  setTimeout(() => {
+    const first = navLinks[0];
+    if (first) {
+      first.classList.add('active');
+      moveIndicator(first);
+    }
+  }, 100);
+
+  // On scroll
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(section => {
@@ -396,11 +417,27 @@ function initNavActiveLink() {
       }
     });
     navLinks.forEach(link => {
-      link.style.color = '';
+      link.classList.remove('active');
       if (link.getAttribute('href') === '#' + current) {
-        link.style.color = '#a78bfa';
+        link.classList.add('active');
+        moveIndicator(link);
       }
     });
+  });
+
+  // On click
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      moveIndicator(link);
+    });
+  });
+
+  // Recalculate on resize
+  window.addEventListener('resize', () => {
+    const active = document.querySelector('.nav-link-item.active');
+    if (active) moveIndicator(active);
   });
 }
 

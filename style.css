@@ -99,13 +99,36 @@ body {
   color: var(--text);
 }
 .nav-logo span { color: var(--primary); }
-.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links {
+  display: flex; gap: 6px; list-style: none;
+  position: relative;
+  background: transparent;
+  border: none;
+  border-radius: 100px;
+  padding: 4px;
+}
 .nav-links a {
   color: var(--text2); text-decoration: none;
-  font-size: 0.9rem; font-weight: 500;
-  transition: color 0.2s;
+  font-size: 0.85rem; font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 100px;
+  position: relative; z-index: 2;
+  transition: color 0.3s ease;
 }
 .nav-links a:hover { color: var(--text); }
+.nav-links a.active { color: #fff; }
+.nav-indicator {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 4px;
+  border-radius: 100px;
+  background: var(--gradient2);
+  z-index: 1;
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1), width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(108,99,255,0.4);
+  pointer-events: none;
+}
 .nav-cta {
   background: var(--gradient2);
   color: #fff; padding: 10px 24px; border-radius: 100px;

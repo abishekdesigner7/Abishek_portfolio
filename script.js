@@ -204,23 +204,7 @@ function initTiltCards() {
 
 // ===== 4. MAGNETIC HOVER BUTTONS =====
 function initMagneticButtons() {
-  document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta, .social-pill, .quick-btn').forEach(btn => {
-    btn.addEventListener('mousemove', e => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
-    });
-
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = 'translate(0,0)';
-      btn.style.transition = 'transform 0.4s cubic-bezier(0.34,1.56,0.64,1)';
-    });
-
-    btn.addEventListener('mouseenter', () => {
-      btn.style.transition = 'transform 0.1s ease';
-    });
-  });
+  // Disabled — buttons stay static
 }
 
 // ===== 5. SMOOTH SCROLL-TRIGGERED REVEALS =====

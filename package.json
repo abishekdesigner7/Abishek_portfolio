@@ -1,0 +1,14 @@
+{
+  "name": "abishek-portfolio",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Abishek",
+  "license": "ISC",
+  "description": "Abishek's UI/UX Designer Portfolio",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

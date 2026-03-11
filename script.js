@@ -100,16 +100,47 @@ if (badge) {
 }
 
 // ===== CONTACT FORM =====
-function handleSubmit(e) {
+const SEND_BTN_DEFAULT = 'Send Message <span class="btn-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>';
+
+function resetBtn(btn) {
+  btn.innerHTML = SEND_BTN_DEFAULT;
+  btn.disabled = false;
+}
+
+async function handleSubmit(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  btn.textContent = 'Message Sent! ✓';
-  btn.style.background = 'linear-gradient(135deg, #34d399, #06b6d4)';
-  setTimeout(() => {
-    btn.textContent = 'Send Message →';
-    btn.style.background = '';
-    e.target.reset();
-  }, 3000);
+  const form = document.getElementById('contact-form');
+  const success = document.getElementById('form-success');
+  const btn = form.querySelector('button[type="submit"]');
+
+  btn.innerHTML = '<span class="btn-spinner"></span> Sending...';
+  btn.disabled = true;
+
+  try {
+    const response = await fetch('https://formspree.io/f/xeerayll', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      form.reset();
+      resetBtn(btn);
+      form.classList.add('form-hidden');
+      success.classList.add('success-visible');
+
+      setTimeout(() => {
+        success.classList.remove('success-visible');
+        setTimeout(() => form.classList.remove('form-hidden'), 400);
+      }, 4000);
+    } else {
+      resetBtn(btn);
+      alert('Something went wrong. Please try again.');
+    }
+  } catch (err) {
+    resetBtn(btn);
+    alert('Network error. Please check your connection and try again.');
+  }
 }
 
 // ===== ACTIVE NAV LINK ON SCROLL =====

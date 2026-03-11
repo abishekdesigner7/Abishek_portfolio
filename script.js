@@ -1,5 +1,6 @@
 // ===== PRELOADER & PAGE ENTRANCE =====
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   document.body.classList.add('loaded');
   initHeroReveal();
   initParticles();
@@ -15,6 +16,34 @@ document.addEventListener('DOMContentLoaded', () => {
   initCursor();
   initNavActiveLink();
 });
+
+// ===== THEME TOGGLE =====
+function initThemeToggle() {
+  const toggle = document.getElementById('theme-toggle');
+  const savedTheme = localStorage.getItem('theme');
+
+  // Apply saved theme
+  if (savedTheme === 'light') {
+    document.body.classList.add('light');
+  }
+
+  toggle.addEventListener('click', () => {
+    // Add transition class
+    document.body.classList.add('theme-transition');
+
+    // Toggle theme
+    document.body.classList.toggle('light');
+
+    // Save preference
+    const isLight = document.body.classList.contains('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+    // Remove transition class after animation
+    setTimeout(() => {
+      document.body.classList.remove('theme-transition');
+    }, 500);
+  });
+}
 
 // ===== 1. HERO STAGGERED TEXT REVEAL =====
 function initHeroReveal() {

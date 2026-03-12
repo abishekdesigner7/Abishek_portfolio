@@ -14,7 +14,15 @@ app.use(express.static(path.join(__dirname), {
   }
 }));
 
-// All routes serve index.html
+// Serve case study pages
+app.get('/case-study/:project', (req, res) => {
+  const file = path.join(__dirname, 'case-studies', `${req.params.project}.html`);
+  res.sendFile(file, (err) => {
+    if (err) res.status(404).sendFile(path.join(__dirname, 'index.html'));
+  });
+});
+
+// All other routes serve index.html
 app.get('/{*splat}', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });

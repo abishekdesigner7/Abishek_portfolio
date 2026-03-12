@@ -1,0 +1,713 @@
+/* ============================================
+   CASE STUDY CSS — Abishek Portfolio
+   ============================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cs-bg: #070711;
+  --cs-bg-alt: #0c0c1d;
+  --cs-surface: #12122a;
+  --cs-border: rgba(108, 99, 255, 0.15);
+  --cs-text: #e0e0e8;
+  --cs-text-dim: #8888a4;
+  --cs-text-bright: #ffffff;
+  --cs-primary: #6c63ff;
+  --cs-accent: #06b6d4;
+  --cs-gradient: linear-gradient(135deg, #6c63ff, #06b6d4);
+  --cs-radius: 16px;
+  --cs-radius-sm: 10px;
+  --cs-max-width: 1100px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--cs-bg);
+  color: var(--cs-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+.cs-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  background: rgba(7, 7, 17, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--cs-border);
+  z-index: 100;
+}
+
+.cs-nav-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--cs-text-bright);
+  text-decoration: none;
+}
+
+.cs-nav-logo span {
+  color: var(--cs-primary);
+}
+
+.cs-nav-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--cs-text-dim);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.cs-nav-back:hover {
+  color: var(--cs-primary);
+}
+
+/* HERO */
+.cs-hero {
+  padding: 140px 40px 60px;
+  text-align: center;
+  max-width: var(--cs-max-width);
+  margin: 0 auto;
+}
+
+.cs-hero-badge {
+  display: inline-block;
+  padding: 6px 20px;
+  background: rgba(108, 99, 255, 0.12);
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--cs-primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 28px;
+}
+
+.cs-hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: var(--cs-text-bright);
+  line-height: 1.1;
+  margin-bottom: 16px;
+  background: var(--cs-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cs-hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--cs-text-dim);
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.cs-hero-meta {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.cs-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cs-meta-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--cs-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cs-meta-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cs-text-bright);
+}
+
+.cs-hero-image {
+  margin-top: 10px;
+}
+
+.cs-browser-frame {
+  background: var(--cs-surface);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  overflow: hidden;
+  box-shadow: 0 20px 80px rgba(108, 99, 255, 0.1);
+}
+
+.cs-browser-dots {
+  display: flex;
+  gap: 7px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--cs-border);
+}
+
+.cs-browser-dots span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.cs-browser-dots span:nth-child(1) { background: #ff5f57; }
+.cs-browser-dots span:nth-child(2) { background: #febc2e; }
+.cs-browser-dots span:nth-child(3) { background: #28c840; }
+
+.cs-browser-frame img {
+  width: 100%;
+  display: block;
+}
+
+/* SECTIONS */
+.cs-section {
+  padding: 80px 40px;
+}
+
+.cs-section-alt {
+  background: var(--cs-bg-alt);
+}
+
+.cs-container {
+  max-width: var(--cs-max-width);
+  margin: 0 auto;
+}
+
+.cs-section-label {
+  display: inline-block;
+  padding: 5px 16px;
+  background: rgba(108, 99, 255, 0.1);
+  border: 1px solid rgba(108, 99, 255, 0.2);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--cs-primary);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 16px;
+}
+
+.cs-section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--cs-text-bright);
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.cs-sub-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--cs-text-bright);
+  margin-bottom: 16px;
+}
+
+/* TWO COLUMN */
+.cs-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.cs-col p {
+  margin-bottom: 16px;
+  color: var(--cs-text);
+  font-size: 0.95rem;
+}
+
+/* HIGHLIGHT BOX */
+.cs-highlight-box {
+  background: var(--cs-surface);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 28px;
+}
+
+.cs-highlight-box h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cs-text-bright);
+  margin-bottom: 16px;
+}
+
+.cs-highlight-box ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cs-highlight-box li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.9rem;
+  color: var(--cs-text);
+}
+
+.cs-highlight-box li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cs-gradient);
+}
+
+/* LISTS */
+.cs-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cs-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.92rem;
+  color: var(--cs-text);
+}
+
+.cs-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cs-primary);
+}
+
+.cs-list li strong {
+  color: var(--cs-text-bright);
+}
+
+/* PROBLEM CARDS */
+.cs-problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.cs-problem-card {
+  background: var(--cs-surface);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 32px 28px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.cs-problem-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(108, 99, 255, 0.4);
+}
+
+.cs-problem-icon {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--cs-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+}
+
+.cs-problem-card h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cs-text-bright);
+  margin-bottom: 10px;
+}
+
+.cs-problem-card p {
+  font-size: 0.88rem;
+  color: var(--cs-text-dim);
+  line-height: 1.6;
+}
+
+/* PERSONA CARDS */
+.cs-persona-card {
+  background: var(--cs-surface);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius-sm);
+  padding: 22px;
+  margin-bottom: 16px;
+}
+
+.cs-persona-header {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--cs-accent);
+  margin-bottom: 6px;
+}
+
+.cs-persona-card h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--cs-text-bright);
+  margin-bottom: 8px;
+}
+
+.cs-persona-card p {
+  font-size: 0.85rem;
+  color: var(--cs-text-dim);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* PROCESS STEPS */
+.cs-process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.cs-process-steps::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--cs-primary), var(--cs-accent));
+  opacity: 0.3;
+}
+
+.cs-process-step {
+  display: flex;
+  gap: 28px;
+  padding: 28px 0;
+  position: relative;
+}
+
+.cs-step-num {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cs-surface);
+  border: 2px solid var(--cs-primary);
+  border-radius: 50%;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cs-primary);
+  position: relative;
+  z-index: 1;
+}
+
+.cs-process-step h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--cs-text-bright);
+  margin-bottom: 8px;
+}
+
+.cs-process-step p {
+  font-size: 0.9rem;
+  color: var(--cs-text);
+  line-height: 1.7;
+}
+
+/* DECISION CARDS */
+.cs-decisions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.cs-decision-card {
+  background: var(--cs-surface);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 28px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.cs-decision-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(108, 99, 255, 0.35);
+}
+
+.cs-decision-card h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--cs-text-bright);
+  margin-bottom: 10px;
+}
+
+.cs-decision-card p {
+  font-size: 0.88rem;
+  color: var(--cs-text-dim);
+  line-height: 1.65;
+}
+
+/* RESULTS */
+.cs-results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.cs-result-card {
+  background: var(--cs-surface);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.cs-result-card:hover {
+  transform: translateY(-3px);
+}
+
+.cs-result-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--cs-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+}
+
+.cs-result-card p {
+  font-size: 0.88rem;
+  color: var(--cs-text-dim);
+  line-height: 1.5;
+}
+
+/* LEARNINGS */
+.cs-learnings {
+  background: var(--cs-surface);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 36px;
+}
+
+.cs-learnings .cs-sub-title {
+  margin-bottom: 20px;
+}
+
+/* CTA SECTION */
+.cs-cta {
+  padding: 60px 40px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.cs-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: var(--cs-gradient);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cs-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(108, 99, 255, 0.35);
+}
+
+.cs-cta-secondary {
+  color: var(--cs-text-dim);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.cs-cta-secondary:hover {
+  color: var(--cs-primary);
+}
+
+/* FOOTER */
+.cs-footer {
+  padding: 30px 40px;
+  text-align: center;
+  border-top: 1px solid var(--cs-border);
+}
+
+.cs-footer p {
+  font-size: 0.82rem;
+  color: var(--cs-text-dim);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+  .cs-two-col {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .cs-problem-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-decisions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-hero-meta {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cs-nav {
+    padding: 14px 20px;
+  }
+
+  .cs-hero {
+    padding: 110px 20px 40px;
+  }
+
+  .cs-section {
+    padding: 50px 20px;
+  }
+
+  .cs-hero-meta {
+    gap: 16px;
+  }
+
+  .cs-meta-item {
+    min-width: 100px;
+  }
+
+  .cs-process-steps::before {
+    left: 20px;
+  }
+
+  .cs-step-num {
+    width: 42px;
+    height: 42px;
+    font-size: 0.85rem;
+  }
+
+  .cs-process-step {
+    gap: 18px;
+    padding: 20px 0;
+  }
+
+  .cs-cta {
+    padding: 40px 20px 30px;
+  }
+
+  .cs-footer {
+    padding: 24px 20px;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+.cs-hero-badge,
+.cs-hero-title,
+.cs-hero-subtitle,
+.cs-hero-meta,
+.cs-hero-image {
+  animation: csFadeUp 0.7s ease both;
+}
+
+.cs-hero-title { animation-delay: 0.1s; }
+.cs-hero-subtitle { animation-delay: 0.2s; }
+.cs-hero-meta { animation-delay: 0.3s; }
+.cs-hero-image { animation-delay: 0.4s; }
+
+@keyframes csFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Selection */
+::selection {
+  background: rgba(108, 99, 255, 0.3);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cs-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(108, 99, 255, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(108, 99, 255, 0.5);
+}

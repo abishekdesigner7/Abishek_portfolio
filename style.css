@@ -67,6 +67,7 @@ body.light .quick-btn.email-btn { background: rgba(108,99,255,0.06); border-colo
 body.light .quick-btn.whatsapp-btn { background: rgba(37,211,102,0.06); border-color: rgba(37,211,102,0.2); }
 body.light .edu-badge { background: rgba(108,99,255,0.08); border-color: rgba(108,99,255,0.15); }
 body.light .project-link { border-color: rgba(108,99,255,0.2); }
+body.light .case-study-link { border-color: rgba(6,182,212,0.25); background: rgba(6,182,212,0.06); }
 body.light .tool-card { background: var(--surface); border-color: rgba(0,0,0,0.06); }
 body.light .tool-card:hover { border-color: rgba(108,99,255,0.3); }
 body.light .timeline-content { background: var(--surface); border-color: rgba(0,0,0,0.06); }
@@ -682,9 +683,11 @@ body.light .theme-toggle:hover { border-color: var(--primary); background: rgba(
   transform: rotate(4deg) translateY(-8px);
 }
 
+.project-actions {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 16px;
+}
 .project-link {
   display: inline-flex; align-items: center; gap: 6px;
-  margin-top: 16px;
   color: var(--primary2); font-size: 0.85rem; font-weight: 600;
   text-decoration: none;
   border: 1px solid rgba(108,99,255,0.3);
@@ -692,6 +695,15 @@ body.light .theme-toggle:hover { border-color: var(--primary); background: rgba(
   transition: all 0.2s; width: fit-content;
 }
 .project-link:hover { background: rgba(108,99,255,0.1); border-color: var(--primary); }
+.case-study-link {
+  background: rgba(108,99,255,0.08);
+  border-color: rgba(6,182,212,0.3);
+  color: #06b6d4;
+}
+.case-study-link:hover {
+  background: rgba(6,182,212,0.12);
+  border-color: #06b6d4;
+}
 
 .coming-soon { opacity: 0.6; }
 .coming-preview {

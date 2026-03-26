@@ -9,16 +9,16 @@
 }
 
 :root {
-  --cs-bg: #070711;
-  --cs-bg-alt: #0c0c1d;
-  --cs-surface: #12122a;
-  --cs-border: rgba(108, 99, 255, 0.15);
-  --cs-text: #e0e0e8;
-  --cs-text-dim: #8888a4;
-  --cs-text-bright: #ffffff;
-  --cs-primary: #6c63ff;
-  --cs-accent: #06b6d4;
-  --cs-gradient: linear-gradient(135deg, #6c63ff, #06b6d4);
+  --cs-bg: #0C0C0A;
+  --cs-bg-alt: #111110;
+  --cs-surface: #181816;
+  --cs-border: rgba(212, 175, 55, 0.14);
+  --cs-text: #F2EDE4;
+  --cs-text-dim: #A8A090;
+  --cs-text-bright: #F2EDE4;
+  --cs-primary: #D4AF37;
+  --cs-accent: #C2714F;
+  --cs-gradient: linear-gradient(135deg, #D4AF37, #C2714F);
   --cs-radius: 16px;
   --cs-radius-sm: 10px;
   --cs-max-width: 1100px;
@@ -46,7 +46,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 18px 40px;
-  background: rgba(7, 7, 17, 0.85);
+  background: rgba(12, 12, 10, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--cs-border);
